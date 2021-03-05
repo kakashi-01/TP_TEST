@@ -2,9 +2,9 @@
 # @File : pass_test.py
 # _author_=feng
 # date: 2021/1/13
-import requests ,json , re
-from TP_Api_Test.configs.config import HOST
-from TP_Api_Test.Lib.Login_Module.get_token import login
+# import requests ,json , re
+# from TP_Api_Test.configs.config import HOST
+# from TP_Api_Test.Lib.Login_Module.get_token import login
 
 # def Export_metadata():
 #     url = f"{HOST}api/v1/data/element/group/delete"

@@ -4,8 +4,6 @@
 # date: 2021/1/26
 import json
 from ...configs.config import HOST
-from TP_Api_Test.tools.Data_preparation_and_cleaning import Query_list
-
 
 class DataElementManagement:
     def __init__(self, s):

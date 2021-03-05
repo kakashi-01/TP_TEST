@@ -4,10 +4,10 @@
 # date: 2021/1/14
 import xlrd
 from ..Lib.Login_Module.login import Login_TP
-from TP_Api_Test.test_case.test_Data_Index import TestDataIndex
-from TP_Api_Test.Lib.Function_Module.Algorithm_Tool import AlgorithmTool
+# from TP_Api_Test.test_case.test_Data_Index import TestDataIndex
+# from TP_Api_Test.Lib.Function_Module.Algorithm_Tool import AlgorithmTool
 from ..tools.getExcelData import get_excelData, set_excelData
-from TP_Api_Test.test_case.conftest import login_fixture
+# from TP_Api_Test.test_case.conftest import login_fixture
 
 workBookNew = set_excelData()
 # 拿到复制的文件对象
