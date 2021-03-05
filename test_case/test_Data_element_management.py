@@ -8,7 +8,7 @@ import pytest
 from ..Lib.Function_Module.Data_element_management import DataElementManagement
 from ..tools.getExcelData import get_excelData
 # from tools.getYamlData import get_yaml_data
-from TP_Api_Test.tools.logBasic import logger
+from ..tools.logBasic import logger
 log = logger()
 
 
