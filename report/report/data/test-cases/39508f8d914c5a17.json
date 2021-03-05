@@ -1,0 +1,122 @@
+{
+  "uid" : "39508f8d914c5a17",
+  "name" : "测试输入：",
+  "fullName" : "test_Data_element_management.TestDataElementManagement#test_Batch_import[-{\"code\": \"200\",\"msg\": \"成功0个，失败0个\",\"data\": ",
+  "historyId" : "6356c7984639aa06e95aa02408a8aefd",
+  "time" : {
+    "start" : 1614764501055,
+    "stop" : 1614764501122,
+    "duration" : 67
+  },
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ {
+    "name" : "login_fixture",
+    "time" : {
+      "start" : 1614764498723,
+      "stop" : 1614764499080,
+      "duration" : 357
+    },
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "登录",
+      "time" : {
+        "start" : 1614764498724,
+        "stop" : 1614764499080,
+        "duration" : 356
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false,
+      "stepsCount" : 0
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true,
+    "stepsCount" : 1
+  } ],
+  "afterStages" : [ {
+    "name" : "login_fixture::0",
+    "time" : {
+      "start" : 1614764502314,
+      "stop" : 1614764502314,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false,
+    "stepsCount" : 0
+  } ],
+  "labels" : [ {
+    "name" : "epic",
+    "value" : "TP系统"
+  }, {
+    "name" : "story",
+    "value" : "数据元管理接口"
+  }, {
+    "name" : "feature",
+    "value" : "数据元管理模块"
+  }, {
+    "name" : "severity",
+    "value" : "critical"
+  }, {
+    "name" : "tag",
+    "value" : "Data_interface_service(order=7)"
+  }, {
+    "name" : "tag",
+    "value" : "批量导入"
+  }, {
+    "name" : "suite",
+    "value" : "test_Data_element_management"
+  }, {
+    "name" : "subSuite",
+    "value" : "TestDataElementManagement"
+  }, {
+    "name" : "host",
+    "value" : "DESKTOP-5R42TFK"
+  }, {
+    "name" : "thread",
+    "value" : "18160-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "test_Data_element_management"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ {
+    "name" : "inData",
+    "value" : "''"
+  }, {
+    "name" : "respData",
+    "value" : "'{\"code\": \"200\",\"msg\": \"成功0个，失败0个\",\"data\": []}'"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "critical",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ "批量导入", "Data_interface_service(order=7)" ]
+  },
+  "source" : "39508f8d914c5a17.json",
+  "parameterValues" : [ "''", "'{\"code\": \"200\",\"msg\": \"成功0个，失败0个\",\"data\": []}'" ]
+}

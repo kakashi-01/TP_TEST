@@ -1,0 +1,122 @@
+{
+  "uid" : "1f8172a2517f68b8",
+  "name" : "测试输入：",
+  "fullName" : "test_System_Management.TestSystemManagement#test_Assign_user_roles",
+  "historyId" : "26e620be447feee04a015a0595335675",
+  "time" : {
+    "start" : 1614764501199,
+    "stop" : 1614764501205,
+    "duration" : 6
+  },
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ {
+    "name" : "login_fixture",
+    "time" : {
+      "start" : 1614764498723,
+      "stop" : 1614764499080,
+      "duration" : 357
+    },
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "登录",
+      "time" : {
+        "start" : 1614764498724,
+        "stop" : 1614764499080,
+        "duration" : 356
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false,
+      "stepsCount" : 0
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true,
+    "stepsCount" : 1
+  } ],
+  "afterStages" : [ {
+    "name" : "login_fixture::0",
+    "time" : {
+      "start" : 1614764502314,
+      "stop" : 1614764502314,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false,
+    "stepsCount" : 0
+  } ],
+  "labels" : [ {
+    "name" : "epic",
+    "value" : "TP系统"
+  }, {
+    "name" : "feature",
+    "value" : "系统管理模块"
+  }, {
+    "name" : "story",
+    "value" : "系统管理接口"
+  }, {
+    "name" : "severity",
+    "value" : "critical"
+  }, {
+    "name" : "tag",
+    "value" : "分配用户角色"
+  }, {
+    "name" : "tag",
+    "value" : "System_Management(order=5)"
+  }, {
+    "name" : "suite",
+    "value" : "test_System_Management"
+  }, {
+    "name" : "subSuite",
+    "value" : "TestSystemManagement"
+  }, {
+    "name" : "host",
+    "value" : "DESKTOP-5R42TFK"
+  }, {
+    "name" : "thread",
+    "value" : "18160-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "test_System_Management"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ {
+    "name" : "inData",
+    "value" : "''"
+  }, {
+    "name" : "respData",
+    "value" : "'{\"code\":\"200\"}'"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "critical",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ "System_Management(order=5)", "分配用户角色" ]
+  },
+  "source" : "1f8172a2517f68b8.json",
+  "parameterValues" : [ "''", "'{\"code\":\"200\"}'" ]
+}
