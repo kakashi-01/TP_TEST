@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 launch_status failed=0 1619079343000000000
 launch_status broken=0 1619079343000000000
 launch_status passed=29 1619079343000000000
@@ -9,3 +10,16 @@ launch_time max_duration=304 1619079343000000000
 launch_time sum_duration=2470 1619079343000000000
 launch_retries retries=0 1619079343000000000
 launch_retries run=30 1619079343000000000
+=======
+launch_status failed=0 1614764504000000000
+launch_status broken=0 1614764504000000000
+launch_status passed=29 1614764504000000000
+launch_status skipped=1 1614764504000000000
+launch_status unknown=0 1614764504000000000
+launch_time duration=3217 1614764504000000000
+launch_time min_duration=0 1614764504000000000
+launch_time max_duration=317 1614764504000000000
+launch_time sum_duration=2826 1614764504000000000
+launch_retries retries=0 1614764504000000000
+launch_retries run=30 1614764504000000000
+>>>>>>> 630d4ca57f4a8d7a6290664f08ab4fb3ea44918e

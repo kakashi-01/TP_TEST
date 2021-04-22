@@ -1,0 +1,137 @@
+{
+  "uid" : "cf985fa7938b0e89",
+  "name" : "测试输入：{\"label\":\"test01\",\"pid\":674}",
+  "fullName" : "test_Data_element_management.TestDataElementManagement#test_New_group",
+  "historyId" : "ba00bc04b67b308d72625dcda71c7e37",
+  "time" : {
+    "start" : 1614764501013,
+    "stop" : 1614764501052,
+    "duration" : 39
+  },
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ {
+    "name" : "Delete_new_group",
+    "time" : {
+      "start" : 1614764500716,
+      "stop" : 1614764501013,
+      "duration" : 297
+    },
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "登录",
+      "time" : {
+        "start" : 1614764500716,
+        "stop" : 1614764501013,
+        "duration" : 297
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false,
+      "stepsCount" : 0
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true,
+    "stepsCount" : 1
+  } ],
+  "afterStages" : [ {
+    "name" : "Delete_new_group::0",
+    "time" : {
+      "start" : 1614764502315,
+      "stop" : 1614764502737,
+      "duration" : 422
+    },
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "测试数据清除",
+      "time" : {
+        "start" : 1614764502315,
+        "stop" : 1614764502725,
+        "duration" : 410
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false,
+      "stepsCount" : 0
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true,
+    "stepsCount" : 1
+  } ],
+  "labels" : [ {
+    "name" : "epic",
+    "value" : "TP系统"
+  }, {
+    "name" : "story",
+    "value" : "数据元管理接口"
+  }, {
+    "name" : "feature",
+    "value" : "数据元管理模块"
+  }, {
+    "name" : "severity",
+    "value" : "critical"
+  }, {
+    "name" : "tag",
+    "value" : "Data_interface_service(order=7)"
+  }, {
+    "name" : "tag",
+    "value" : "新增分组"
+  }, {
+    "name" : "suite",
+    "value" : "test_Data_element_management"
+  }, {
+    "name" : "subSuite",
+    "value" : "TestDataElementManagement"
+  }, {
+    "name" : "host",
+    "value" : "DESKTOP-5R42TFK"
+  }, {
+    "name" : "thread",
+    "value" : "18160-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "test_Data_element_management"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ {
+    "name" : "inData",
+    "value" : "'{\"label\":\"test01\",\"pid\":674}'"
+  }, {
+    "name" : "respData",
+    "value" : "'{\"code\": \"200\"}'"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "critical",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ "新增分组", "Data_interface_service(order=7)" ]
+  },
+  "source" : "cf985fa7938b0e89.json",
+  "parameterValues" : [ "'{\"label\":\"test01\",\"pid\":674}'", "'{\"code\": \"200\"}'" ]
+}

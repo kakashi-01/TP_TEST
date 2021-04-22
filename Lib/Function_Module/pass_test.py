@@ -2,6 +2,7 @@
 # @File : pass_test.py
 # _author_=feng
 # date: 2021/1/13
+<<<<<<< HEAD
 # import requests ,json
 # from TP_Api_Test.configs.config import HOST
 # from TP_Api_Test.Lib.Login_Module.get_token import login
@@ -12,6 +13,19 @@
 #     reps = requests.get(url, params=payload)
 #     reps.encoding = 'utf-8'
 #     return reps.status_code
+=======
+# import requests ,json , re
+# from TP_Api_Test.configs.config import HOST
+# from TP_Api_Test.Lib.Login_Module.get_token import login
+
+# def Export_metadata():
+#     url = f"{HOST}api/v1/data/element/group/delete"
+#     header = {"Authorization": f"bearer {login()}"}
+#     payload ={"id": 940}
+#     reps = requests.post(url , headers=header , json=payload)
+#     reps.encoding = 'utf-8'
+#     return reps.json()
+>>>>>>> 630d4ca57f4a8d7a6290664f08ab4fb3ea44918e
 #
 # if __name__ == '__main__':
 #     a = Export_metadata()
