@@ -1,0 +1,122 @@
+{
+  "uid" : "d662bcf739295539",
+  "name" : "测试输入：",
+  "fullName" : "test_Data_element_management.TestDataElementManagement#test_Query_directory_tree",
+  "historyId" : "caefb884c9d4f7748262a64733f3935d",
+  "time" : {
+    "start" : 1619077450829,
+    "stop" : 1619077450934,
+    "duration" : 105
+  },
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ {
+    "name" : "login_fixture",
+    "time" : {
+      "start" : 1619077449455,
+      "stop" : 1619077449753,
+      "duration" : 298
+    },
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "登录",
+      "time" : {
+        "start" : 1619077449455,
+        "stop" : 1619077449753,
+        "duration" : 298
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "hasContent" : false,
+      "shouldDisplayMessage" : false,
+      "attachmentsCount" : 0
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 1,
+    "hasContent" : true,
+    "shouldDisplayMessage" : false,
+    "attachmentsCount" : 0
+  } ],
+  "afterStages" : [ {
+    "name" : "login_fixture::0",
+    "time" : {
+      "start" : 1619077452448,
+      "stop" : 1619077452448,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : false,
+    "shouldDisplayMessage" : false,
+    "attachmentsCount" : 0
+  } ],
+  "labels" : [ {
+    "name" : "feature",
+    "value" : "数据元管理模块"
+  }, {
+    "name" : "story",
+    "value" : "数据元管理接口"
+  }, {
+    "name" : "epic",
+    "value" : "TP系统"
+  }, {
+    "name" : "severity",
+    "value" : "critical"
+  }, {
+    "name" : "tag",
+    "value" : "查询目录树"
+  }, {
+    "name" : "tag",
+    "value" : "Data_interface_service(order=7)"
+  }, {
+    "name" : "suite",
+    "value" : "test_Data_element_management"
+  }, {
+    "name" : "subSuite",
+    "value" : "TestDataElementManagement"
+  }, {
+    "name" : "host",
+    "value" : "DESKTOP-5R42TFK"
+  }, {
+    "name" : "thread",
+    "value" : "13208-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "test_Data_element_management"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ {
+    "name" : "inData",
+    "value" : "''"
+  }, {
+    "name" : "respData",
+    "value" : "'{\"code\": \"200\"}'"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "critical",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ "查询目录树", "Data_interface_service(order=7)" ]
+  },
+  "source" : "d662bcf739295539.json",
+  "parameterValues" : [ "''", "'{\"code\": \"200\"}'" ]
+}

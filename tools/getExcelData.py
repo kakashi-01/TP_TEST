@@ -2,13 +2,12 @@
 # @File : getExcelData.py
 # _author_=feng
 # date: 2021/1/13
-# xlrd  openpyxl(xlsx表格复制)
+# openpyxl(xlsx表格复制)
 import xlrd
-import json  # pip  install xlrd
 from xlutils.copy import copy
+
+
 # 1- 打开excel表
-
-
 def get_excelData(sheetName, startRow, endRow):
     dataList = []
     # 1-excel表路径
@@ -66,8 +65,8 @@ def set_excelData():
     # 1-excel表路径
     excelDir = '../data/TP_接口自动化测试用例V1.1.xls'
     # 2- 打开excel对象--formatting_info=True  保持样式
-    workBook = xlrd.open_workbook(excelDir,formatting_info=True)
-    workBookNew = copy(workBook) # 复制一个新excel文件对象
+    workBook = xlrd.open_workbook(excelDir, formatting_info=True)
+    workBookNew = copy(workBook)  # 复制一个新excel文件对象
     # workSheetNew = workBookNew.get_sheet(n)
     # 取复制出来的新excel文件对象的第一个子表
     workBookNew.save(r'../report/res.xls')
