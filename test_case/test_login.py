@@ -2,14 +2,15 @@
 # @File : test_login.py
 # _author_=feng
 # date: 2021/1/13
+
 import pytest
 import allure
-import json
 from ..Lib.Login_Module.login import Login_TP
-from ..tools.getExcelData import get_excelData
-# from tools.getYamlData import get_yaml_data
+from ..tools.getYamlData import get_really_yamldata
+# from ..tools.getExcelData import get_excelData
 from ..tools.logBasic import logger
 log = logger()  # 调用自定义封装的log函数
+
 
 @allure.epic('TP系统')
 @allure.feature('登录模块')
@@ -17,54 +18,104 @@ log = logger()  # 调用自定义封装的log函数
 @allure.severity('critical')
 @pytest.mark.Login(order=1)
 class TestLogin:
-    # @pytest.mark.parametrize('inData,respData',get_yaml_data('../data/data.yaml'))  # param
-    # parametrize('变量'，值)
-    @pytest.mark.正常账户密码登陆
+    @pytest.mark.正确账户和密码
     @allure.title("测试输入：{inData}")
-    @pytest.mark.parametrize('inData,respData', get_excelData('1登录模块', 2, 2))
+    @pytest.mark.parametrize('inData,respData',
+                             [get_really_yamldata("test_data.yml", "用户名正确，密码正确")])
+    # @pytest.mark.parametrize('inData,respData', get_excelData('1登录模块', 2, 2))
     def test_login_a(self, inData, respData):
         # 1- 调用--封装模块
         res = Login_TP().api_login(inData)
         log.info('------##############------------')
         # 2- 断言  实际结果与预期的结果进行比较
-        # try:
-        #     assert res == json.loads(respData)['token_type']
-        # except Exception as err:
-        #     log.error(err)  #
-        #     raise err  # 抛出异常
-        if "access_token" in res:
-            assert res["token_type"] == json.loads(respData)["token_type"]
-        else:
-            assert res["error"] == json.loads(respData)["error"]
+        try:
+            assert res["token_type"] == respData["token_type"]
+            # assert res["token_type"] == json.loads(respData)["token_type"]  #getExceData时使用
+        except Exception as err:
+            log.error(err)
+            raise err
+        # 读的Excel表中的数据需要json.loads(respData)（因为表中读出来的是字符串）
+        # if "access_token" in res:
+        #     assert res["token_type"] == json.loads(respData)["token_type"]
+        # else:
+        #     assert res["error"] == json.loads(respData)["error"]
 
-    @pytest.mark.异常密码登陆
+    @pytest.mark.用户名正确_密码为空
     @allure.title("测试输入：{inData}")
-    @pytest.mark.parametrize('inData,respData', get_excelData('1登录模块', 3, 4))
+    @pytest.mark.parametrize('inData,respData',
+                             [get_really_yamldata("test_data.yml", "用户名正确，密码为空")])
+    # @pytest.mark.parametrize('inData,respData', get_excelData('1登录模块', 3, 4))
     def test_login_s1(self, inData, respData):
         # 1- 调用--封装模块
         res = Login_TP().api_login_p(inData)
         log.info('------##############------------')
         # 2- 断言  实际结果与预期的结果进行比较
         try:
-            assert res == json.loads(respData)['error']
+            assert res == respData['error']
         except Exception as err:
             log.error(err)  #
             raise err  # 抛出异常
 
-    @pytest.mark.异常账户登陆
+    @pytest.mark.用户名正确_密码错误
     @allure.title("测试输入：{inData}")
-    @pytest.mark.parametrize('inData,respData', get_excelData('1登录模块', 5, 7))
+    @pytest.mark.parametrize('inData,respData',
+                             [get_really_yamldata("test_data.yml", "用户名正确，密码错误")])
     def test_login_s2(self, inData, respData):
+        # 1- 调用--封装模块
+        res = Login_TP().api_login_p(inData)
+        log.info('------##############------------')
+        # 2- 断言  实际结果与预期的结果进行比较
+        try:
+            assert res == respData['error']
+        except Exception as err:
+            log.error(err)  #
+            raise err  # 抛出异常
+
+    @pytest.mark.用户名为空_密码正确
+    @allure.title("测试输入：{inData}")
+    @pytest.mark.parametrize('inData,respData',
+                             [get_really_yamldata("test_data.yml", "用户名为空，密码正确")])
+    # @pytest.mark.parametrize('inData,respData', get_excelData('1登录模块', 5, 7))
+    def test_login_s3(self, inData, respData):
         # 1- 调用--封装模块
         res = Login_TP().api_login_u(inData)
         log.info('------##############------------')
         # 2- 断言  实际结果与预期的结果进行比较
         try:
-            assert res == json.loads(respData)['error']
+            assert res == respData['error']
         except Exception as err:
             log.error(err)  #
             raise err  # 抛出异常
 
+    @pytest.mark.用户名和密码都为空
+    @allure.title("测试输入：{inData}")
+    @pytest.mark.parametrize('inData,respData',
+                             [get_really_yamldata("test_data.yml", "用户名和密码都为空")])
+    def test_login_s4(self, inData, respData):
+        # 1- 调用--封装模块
+        res = Login_TP().api_login_u(inData)
+        log.info('------##############------------')
+        # 2- 断言  实际结果与预期的结果进行比较
+        try:
+            assert res == respData['error']
+        except Exception as err:
+            log.error(err)  #
+            raise err  # 抛出异常
+
+    @pytest.mark.用户名错误_密码正确
+    @allure.title("测试输入：{inData}")
+    @pytest.mark.parametrize('inData,respData',
+                             [get_really_yamldata("test_data.yml", "用户名错误_密码正确")])
+    def test_login_s5(self, inData, respData):
+        # 1- 调用--封装模块
+        res = Login_TP().api_login_u(inData)
+        log.info('------##############------------')
+        # 2- 断言  实际结果与预期的结果进行比较
+        try:
+            assert res == respData['error']
+        except Exception as err:
+            log.error(err)  #
+            raise err  # 抛出异常
 
     # @allure.story('登录界面')
     # @allure.severity('critical')

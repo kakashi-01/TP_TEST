@@ -16,7 +16,9 @@ class DataElementManagement:
 
     def New_group(self, inData):
         url = f"{HOST}api/v1/data/element/group/add"
-        payload = json.loads(inData)  # inData是字符串，转字典传入
+        payload = inData  # 下面函数直接把inData参数写到requests请求中了
+        # 读的Excel表中的数据需要json.loads(inData)（因为表中读出来的是字符串）
+        # payload = json.loads(inData)  # inData是字符串，转字典传入
         r = self.s.post(url , json=payload)
         r.encoding = 'unicode_escape'
         return r.json()
@@ -35,7 +37,7 @@ class DataElementManagement:
             "file": (
                 "模板.xlsx",
                 open(
-                    "../data/模板.xlsx",
+                    "D:\\Auto_test_python\\TP_Api_Test\\data模板.xlsx",
                     "rb"),
                 "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet")}
         # ’..’ 表示py文件当前所处的文件夹上一级文件夹的绝对路径,执行文件在testcase，先到上一级文件夹TP_Api_Test+/data目录

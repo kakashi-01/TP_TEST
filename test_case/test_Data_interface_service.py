@@ -6,8 +6,8 @@ import json
 import allure
 import pytest
 from ..Lib.Function_Module.Data_interface_service import DataInterfaceService
-from ..tools.getExcelData import get_excelData
-# from tools.getYamlData import get_yaml_data
+from ..tools.getYamlData import get_really_yamldata
+# from ..tools.getExcelData import get_excelData
 from ..tools.logBasic import logger
 log = logger()
 
@@ -17,52 +17,64 @@ log = logger()
 @allure.severity('critical')
 @pytest.mark.Data_interface_service(order=6)
 class TestDataInterfaceService:
-    # @pytest.mark.parametrize('inData,respData',get_yaml_data('../data/data.yaml'))  # param
+    # @pytest.mark.parametrize('inData,respData',get_yaml_data('../data/test_data.yml'))  # param
     # def setup_class(self):
     @pytest.mark.API接口查询
     @allure.title("测试输入：{inData}")
-    @pytest.mark.parametrize('inData,respData', get_excelData('6数据接口服务', 2, 2))
+    @pytest.mark.parametrize('inData,respData',
+                             [get_really_yamldata("test_data.yml", "API接口查询")])
+    # @pytest.mark.parametrize('inData,respData', get_excelData('6数据接口服务', 2, 2))
     def test_Interface_query(self, login_fixture, inData, respData):
         res = DataInterfaceService(login_fixture).API_interface_query()  # 无需传参inData
         log.info('------##############------------')
         try:
-            assert res["code"] == json.loads(respData)["code"]
+            assert res["code"] == respData["code"]
+            # assert res["code"] == json.loads(respData)["code"]
         except Exception as err:
             log.error(err)
             raise err
 
     @pytest.mark.接口分组查看
     @allure.title("测试输入：{inData}")
-    @pytest.mark.parametrize('inData,respData', get_excelData('6数据接口服务', 3, 3))
+    @pytest.mark.parametrize('inData,respData',
+                             [get_really_yamldata("test_data.yml", "接口分组查看")])
+    # @pytest.mark.parametrize('inData,respData', get_excelData('6数据接口服务', 3, 3))
     def test_Interface_group_view(self, login_fixture, inData, respData):
         res = DataInterfaceService(login_fixture).Interface_group_view(inData)
         log.info('------##############------------')
         try:
-            assert res["code"] == json.loads(respData)["code"]
+            assert res["code"] == respData["code"]
+            # assert res["code"] == json.loads(respData)["code"]
         except Exception as err:
             log.error(err)
             raise err
 
     @pytest.mark.接口分组编辑
     @allure.title("测试输入：{inData}")
-    @pytest.mark.parametrize('inData,respData', get_excelData('6数据接口服务', 4, 4))
+    @pytest.mark.parametrize('inData,respData',
+                             [get_really_yamldata("test_data.yml", "接口分组编辑")])
+    # @pytest.mark.parametrize('inData,respData', get_excelData('6数据接口服务', 4, 4))
     def test_Interface_group_editing(self, login_fixture, inData, respData):
         res = DataInterfaceService(login_fixture).Interface_group_editing(inData)
         log.info('------##############------------')
         try:
-            assert res["code"] == json.loads(respData)["code"]
+            assert res["code"] == respData["code"]
+            # assert res["code"] == json.loads(respData)["code"]
         except Exception as err:
             log.error(err)
             raise err
 
     @pytest.mark.API时耗列表查询
     @allure.title("测试输入：{inData}")
-    @pytest.mark.parametrize('inData,respData', get_excelData('6数据接口服务', 5, 5))
+    @pytest.mark.parametrize('inData,respData',
+                             [get_really_yamldata("test_data.yml", "API时耗列表查询")])
+    # @pytest.mark.parametrize('inData,respData', get_excelData('6数据接口服务', 5, 5))
     def test_API_time_query(self, login_fixture, inData, respData):
         res = DataInterfaceService(login_fixture).API_time_query(inData)
         log.info('------##############------------')
         try:
-            assert res["code"] == json.loads(respData)["code"]
+            assert res["code"] == respData["code"]
+            # assert res["code"] == json.loads(respData)["code"]
         except Exception as err:
             log.error(err)
             raise err
