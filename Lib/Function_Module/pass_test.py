@@ -29,11 +29,3 @@
 #     r=json.loads(Query_list())["data"][0]["children"][-1]["id"]
 #     print(r)
 #     print(type(r))
-# import  openpyxl
-# wb = openpyxl.load_workbook("D:\Auto_test_python\TP_Api_Test\data\TP_接口自动化测试用例V1.1.xlsx")
-# ws = wb.active()
-# print(wb)
-# print(type(wb))
-# print(ws)
-# print(type(ws))
-# print(wb.get_sheet_names())

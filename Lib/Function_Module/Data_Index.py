@@ -13,32 +13,30 @@ class DataIndex:
 
     def Data_list(self, inData):
         index_url = f"{HOST}api/v1/q/sql/task"
-        payload = inData # 下面函数直接把inData参数写到requests请求中了
-        # 读的Excel表中的数据需要json.loads(inData)（因为表中读出来的是字符串）
-        # payload = json.loads(inData)  # inData是字符串，转字典传入
+        payload = json.loads(inData)  # inData是字符串，转字典传入
         r = self.s.post(index_url, json=payload)
         r.encoding = 'unicode_escape'
         return r.json()
 
     def Save_Data(self, inData):
         login_url = f"{HOST}api/v1/tree/saveData"
-        # payload = json.loads(inData)  # inData是字符串，转字典传入
-        r = self.s.post(login_url, json=inData)
+        payload = json.loads(inData)  # inData是字符串，转字典传入
+        r = self.s.post(login_url, json=payload)
         r.encoding = 'unicode_escape'
         return r.json()
 
     def Export_data(self, inData):
         login_url = f"{HOST}api/v1/q/export/e528a75b-8178-4c2a-9066-66986988652c?"
         # header = {"Authorization": f"bearer {r.json()['access_token']}"}
-        # payload = json.loads(inData)  # inData是字符串，转字典传入
-        r = self.s.get(login_url, params=inData)
+        payload = json.loads(inData)  # inData是字符串，转字典传入
+        r = self.s.get(login_url, params=payload)
         # reps.encoding = 'unicode_escape'
         return r.status_code
 
     def Export_metadata(self, inData):
         login_url = f"{HOST}api/v1/admin/exportIndexMetaData?"
-        # payload = json.loads(inData)  # inData是字符串，转字典传入
-        r = requests.get(login_url, params=inData)
+        payload = json.loads(inData)  # inData是字符串，转字典传入
+        r = requests.get(login_url, params=payload)
         # reps.encoding = 'unicode_escape'
         return r.status_code
 
@@ -51,8 +49,8 @@ class DataIndex:
 
     def Edit_metadata(self, inData):
         login_url = f"{HOST}api/v1/index/onlineEditMetadataTable"
-        # payload = json.loads(inData)  # inData是字符串，转字典传入
-        r = requests.get(login_url, params=inData)
+        payload = json.loads(inData)  # inData是字符串，转字典传入
+        r = requests.get(login_url, params=payload)
         # reps.encoding = 'unicode_escape'
         return r.json()
 

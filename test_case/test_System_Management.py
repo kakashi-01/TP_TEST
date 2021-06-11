@@ -6,8 +6,8 @@ import json
 import allure
 import pytest
 from ..Lib.Function_Module.System_Management import SystemManagement
-from ..tools.getYamlData import get_really_yamldata
-# from ..tools.getExcelData import get_excelData
+from ..tools.getExcelData import get_excelData
+# from tools.getYamlData import get_yaml_data
 from ..tools.logBasic import logger
 log = logger()
 
@@ -17,64 +17,52 @@ log = logger()
 @allure.severity('critical')
 @pytest.mark.System_Management(order=5)
 class TestSystemManagement:
-    # @pytest.mark.parametrize('inData,respData',get_yaml_data('../data/test_data.yml'))  # param
+    # @pytest.mark.parametrize('inData,respData',get_yaml_data('../data/data.yaml'))  # param
     # def setup_class(self):
     @pytest.mark.添加用户
     @allure.title("测试输入：{inData}")
-    @pytest.mark.parametrize('inData,respData',
-                             [get_really_yamldata("test_data.yml", "添加用户")])
-    # @pytest.mark.parametrize('inData,respData', get_excelData('5系统管理模块', 2, 2))
+    @pytest.mark.parametrize('inData,respData', get_excelData('5系统管理模块', 2, 2))
     def test_Add_user(self, login_fixture, inData, respData):
         res = SystemManagement(login_fixture).Add_user(inData)
         log.info('------##############------------')
         try:
-            assert res == respData["code"]
-            # assert res == json.loads(respData)["code"]
+            assert res == json.loads(respData)["code"]
         except Exception as err:
             log.error(err)
             raise err
 
     @pytest.mark.分配用户角色
     @allure.title("测试输入：{inData}")
-    @pytest.mark.parametrize('inData,respData',
-                             [get_really_yamldata("test_data.yml", "分配用户角色")])
-    # @pytest.mark.parametrize('inData,respData', get_excelData('5系统管理模块', 3, 3))
+    @pytest.mark.parametrize('inData,respData', get_excelData('5系统管理模块', 3, 3))
     def test_Assign_user_roles(self, login_fixture, inData, respData):
         res = SystemManagement(login_fixture).Assign_user_roles()  # 无需传参inData
         log.info('------##############------------')
         try:
-            assert res["code"] == respData["code"]
-            # assert res["code"] == json.loads(respData)["code"]
+            assert res["code"] == json.loads(respData)["code"]
         except Exception as err:
             log.error(err)
             raise err
 
     @pytest.mark.添加角色
     @allure.title("测试输入：{inData}")
-    @pytest.mark.parametrize('inData,respData',
-                             [get_really_yamldata("test_data.yml", "添加角色")])
-    # @pytest.mark.parametrize('inData,respData', get_excelData('5系统管理模块', 4, 4))
+    @pytest.mark.parametrize('inData,respData', get_excelData('5系统管理模块', 4, 4))
     def test_Add_role(self, login_fixture, inData, respData):
         res = SystemManagement(login_fixture).Add_role(inData)
         log.info('------##############------------')
         try:
-            assert res == respData["code"]
-            # assert res == json.loads(respData)["code"]
+            assert res == json.loads(respData)["code"]
         except Exception as err:
             log.error(err)
             raise err
 
     @pytest.mark.获取所有按钮
     @allure.title("测试输入：{inData}")
-    @pytest.mark.parametrize('inData,respData',
-                             [get_really_yamldata("test_data.yml", "获取所有按钮")])
-    # @pytest.mark.parametrize('inData,respData', get_excelData('5系统管理模块', 5, 5))
+    @pytest.mark.parametrize('inData,respData', get_excelData('5系统管理模块', 5, 5))
     def test_Get_all_buttons(self, login_fixture, inData, respData):
         res = SystemManagement(login_fixture).Get_all_buttons()  # 无需传参inData
         log.info('------##############------------')
         try:
-            assert res["code"] == respData["code"]
-            # assert res["code"] == json.loads(respData)["code"]
+            assert res["code"] == json.loads(respData)["code"]
         except Exception as err:
             log.error(err)
             raise err

@@ -6,8 +6,8 @@ import json
 import allure
 import pytest
 from ..Lib.Function_Module.Data_Index import DataIndex
-from ..tools.getYamlData import get_really_yamldata
-# from ..tools.getExcelData import get_excelData
+from ..tools.getExcelData import get_excelData
+# from tools.getYamlData import get_yaml_data
 from ..tools.logBasic import logger
 log = logger()  # 调用自定义封装的log函数
 
@@ -18,75 +18,63 @@ log = logger()  # 调用自定义封装的log函数
 @allure.severity('critical')
 @pytest.mark.Data_Index(order=2)
 class TestDataIndex:  # 测试用例类
-    # @pytest.mark.parametrize('inData,respData',get_yaml_data('../data/test_data.yml'))  # param
+    # @pytest.mark.parametrize('inData,respData',get_yaml_data('../data/data.yaml'))  # param
     # def setup_class(self):
     @pytest.mark.指数数据查询  # 加标签
     @allure.title("测试输入：{inData}")
-    @pytest.mark.parametrize('inData,respData',
-                             [get_really_yamldata("test_data.yml", "指数查询")])
-    # @pytest.mark.parametrize('inData,respData', get_excelData('2指数模块', 2, 2))
+    @pytest.mark.parametrize('inData,respData', get_excelData('2指数模块', 2, 2))
     def test_DataList(self, login_fixture, inData, respData):
         ''' case description:查看指标数据库中的数据 '''
         res = DataIndex(login_fixture).Data_list(inData)
         log.info('------##############------------')
         try:
-            assert res["code"] == respData["code"]
-            # assert res["code"] == json.loads(respData)["code"] #getExceData时使用
+            assert res["code"] == json.loads(respData)["code"]
         except Exception as err:
             log.error(err)
             raise err  # 抛出异常
 
-    @pytest.mark.保存数据  # 加标签
+    @pytest.mark.数据保存  # 加标签
     @allure.title("测试输入：{inData}")
     @pytest.mark.skip(reason="需要先删除已有数据才可保存成功")
-    @pytest.mark.parametrize('inData,respData',
-                             [get_really_yamldata("test_data.yml", "保存数据")])
-    # @pytest.mark.parametrize('inData,respData', get_excelData('2指数模块', 3, 3))
+    @pytest.mark.parametrize('inData,respData', get_excelData('2指数模块', 3, 3))
     def test_saveData(self, login_fixture, inData, respData):
         # s = login_fixture
         res = DataIndex(login_fixture).Save_Data(inData)
         log.info('------##############------------')
         try:
-            assert res["code"] == respData["code"]
-            # assert res["code"] == json.loads(respData)["code"]
+            assert res["code"] == json.loads(respData)["code"]
             return True
         except Exception as err:
             log.error(err)
             raise err  # 抛出异常
 
-    @pytest.mark.导出数据  # 加标签
+    @pytest.mark.数据导出  # 加标签
     @allure.title("测试输入：{inData}")
-    @pytest.mark.parametrize('inData,respData',
-                             [get_really_yamldata("test_data.yml", "导出数据")])
-    # @pytest.mark.parametrize('inData,respData', get_excelData('2指数模块', 4, 4))
+    @pytest.mark.parametrize('inData,respData', get_excelData('2指数模块', 4, 4))
     def test_Exportdata(self, login_fixture, inData, respData):
         # s = login_fixture
         res = DataIndex(login_fixture).Export_data(inData)
         log.info('------##############------------')
         try:
-            assert str(res) == respData["code"]
-            # assert str(res) == json.loads(respData)["code"]
+            assert str(res) == json.loads(respData)["code"]
         except Exception as err:
             log.error(err)
             raise err  # 抛出异常
 
-    @pytest.mark.导出元数据  # 加标签
+    @pytest.mark.元数据导出  # 加标签
     @allure.title("测试输入：{inData}")
-    @pytest.mark.parametrize('inData,respData',
-                             [get_really_yamldata("test_data.yml", "导出元数据")])
-    # @pytest.mark.parametrize('inData,respData', get_excelData('2指数模块', 5, 5))
+    @pytest.mark.parametrize('inData,respData', get_excelData('2指数模块', 5, 5))
     def test_Export_metadata(self, inData, respData):
         # 此接口不需要鉴权，所以可不传login_fixture.功能函数需要加上requests请求（Data_Index.py中）
         res = DataIndex(self).Export_metadata(inData)
         log.info('------##############------------')
         try:
-            assert str(res) == respData["code"]
-            # assert str(res) == json.loads(respData)["code"]
+            assert str(res) == json.loads(respData)["code"]
         except Exception as err:
             log.error(err)
             raise err  # 抛出异常
 
-    # @pytest.mark.筛选元数据  # 加标签
+    # @pytest.mark.筛选元数据表  # 加标签
     # @allure.title("测试输入：{inData}")
     # @pytest.mark.parametrize('inData,respData', get_excelData('2指数模块', 6, 6))
     # def test_Filter_metadata(self, login_fixture, inData, respData):
@@ -101,16 +89,13 @@ class TestDataIndex:  # 测试用例类
 
     @pytest.mark.编辑元数据  # 加标签
     @allure.title("测试输入：{inData}")
-    @pytest.mark.parametrize('inData,respData',
-                             [get_really_yamldata("test_data.yml", "编辑元数据")])
-    # @pytest.mark.parametrize('inData,respData', get_excelData('2指数模块', 7, 7))
+    @pytest.mark.parametrize('inData,respData', get_excelData('2指数模块', 7, 7))
     def test_Edit_metadata(self, login_fixture, inData, respData):
         # s = login_fixture
         res = DataIndex(login_fixture).Edit_metadata(inData)
         log.info('------##############------------')
         try:
-            assert res["code"] == respData["code"]
-            # assert res["code"] == json.loads(respData)["code"]
+            assert res["code"] == json.loads(respData)["code"]
         except Exception as err:
             log.error(err)
             raise err  # 抛出异常
