@@ -11,7 +11,9 @@ class AlgorithmTool:
 
     def Task_query(self, inData):
         url = f"{HOST}api/v1/nc/message-center/api/messages"
-        payload = json.loads(inData)  # inData是字符串，转字典传入
+        payload = inData  # 下面函数直接把inData参数写到requests请求中了
+        # 读的Excel表中的数据需要json.loads(inData)（因为表中读出来的是字符串）
+        # payload = json.loads(inData)  # inData是字符串，转字典传入
         r = self.s.get(url, params=payload)
         r.encoding = 'unicode_escape'
         return r.json()
@@ -21,15 +23,15 @@ class AlgorithmTool:
         # 1- 操作查询--需要token(fixture前置操作用r拿token)
         # header = {"content-type": "application/json",
         #           "Authorization": f"bearer {r.json()['access_token']}"}  # 请求头
-        payload = json.loads(inData)  # inData是字符串，转字典传入
-        r = self.s.post(url, json=payload)
+        # payload = json.loads(inData)  # inData是字符串，转字典传入
+        r = self.s.post(url, json=inData)
         r.encoding = 'unicode_escape'
         return r.json()
 
     def Get_algorithm(self, inData):
         url = f"{HOST}api/v1/tree/func/7929dabb24cbfff42b58231111a75ce4"
-        payload = json.loads(inData)  # inData是字符串，转字典传入
-        r = self.s.get(url, params=payload)
+        # payload = json.loads(inData)  # inData是字符串，转字典传入
+        r = self.s.get(url, params=inData)
         r.encoding = 'unicode_escape'
         return r.status_code
 
@@ -38,14 +40,14 @@ class AlgorithmTool:
         # 1- 操作查询--需要token(fixture前置操作用r拿token)
         # header = {"content-type": "application/json",
         #           "Authorization": f"bearer {r.json()['access_token']}"}  # 请求头
-        payload = json.loads(inData)  # inData是字符串，转字典传入
-        r = self.s.post(url, json=payload)
+        # payload = json.loads(inData)  # inData是字符串，转字典传入
+        r = self.s.post(url, json=inData)
         r.encoding = 'unicode_escape'
         return r.status_code
 
     def Alg_supermarket(self, inData):
         url = f"{HOST}api/v1/algo/page"
-        payload = json.loads(inData)  # inData是字符串，转字典传入
-        r = self.s.get(url, params=payload)
+        # payload = json.loads(inData)  # inData是字符串，转字典传入
+        r = self.s.get(url, params=inData)
         r.encoding = 'unicode_escape'
         return r.status_code

@@ -7,19 +7,19 @@
 用户名正确，密码正确:
   [{ grant_type: password ,username: 17688701458 ,password: Sutpc@2020 ,imageCode: 9527 }, { token_type: bearer,expires_in: 35999, scope: all, uid: 3b72468c8a60488d8258a9b2033b4baa }]
 用户名正确，密码为空:
-  [{ grant_type: password ,username: 17688701458 ,password: ‘’ ,imageCode: 9527 }, { error: unauthorized, error_description: 用户名密码错误! }]
+  [{ grant_type: password ,username: 17688701458 ,password: ‘’ ,imageCode: 9527 }, {"code":null,"msg":"用户名或密码错误!","errors":["invalid_request","用户名或密码错误!"]}]
 用户名正确，密码错误:
-  [{ grant_type: password ,username: 17688701458 ,password: Sutpc@2021 ,imageCode: 9527 }, { error: unauthorized, error_description: 用户名密码错误! }]
+  [{ grant_type: password ,username: 17688701458 ,password: Sutpc@2021 ,imageCode: 9527 }, {"code":null,"msg":"用户名或密码错误!","errors":["invalid_request","用户名或密码错误!"]}]
 用户名为空，密码正确:
-  [{ grant_type: password ,username: '' ,password: Sutpc@2020 ,imageCode: 9527 }, { error: invalid_grant, error_description: 用户名密码错误! }]
+  [{ grant_type: password ,username: '' ,password: Sutpc@2020 ,imageCode: 9527 }, {"code":null,"msg":"Bad credentials","errors":["invalid_request","Bad credentials"]}]
 用户名和密码都为空:
-  [{ grant_type: password ,username: '' ,password: '' ,imageCode: 9527 }, { error: invalid_grant, error_description: 用户名密码错误! }]
+  [{ grant_type: password ,username: '' ,password: '' ,imageCode: 9527 }, {"code":null,"msg":"Bad credentials","errors":["invalid_request","Bad credentials"]}]
 用户名错误_密码正确:
-  [{ grant_type: password ,username: 17688701450 ,password: Sutpc@2020 ,imageCode: 9527 }, { error: invalid_grant, error_description: 用户名密码错误! }]
+  [{ grant_type: password ,username: 17688701450 ,password: Sutpc@2020 ,imageCode: 9527 }, {"code":null,"msg":"Bad credentials","errors":["invalid_request","Bad credentials"]}]
 
 # 2_指数模块
 指数查询:
-  [{"sql":"SELECT * FROM t_vai_pedestrian_feature LIMIT 100","isCn":"True"}, {"code":"200"} ]
+  [{"sql":"SELECT * FROM t_vpm_taxi_trip_his LIMIT 100","isCn":true,"moduleId":"TransPaaS"}, {"code":"200"} ]
 保存数据:
   [{"title":"xx","titleEn":"task_balabla2","layer":"010100","parentId":1662,"treeType":"PERSONAGE","createdBy":"XXX","linkKey":"3f3ba3e0-3b4c-49dd-b02a-84ab26c132a4"}, {"code":"200","msg":"success","data":"保存成功"}]
 导出数据:

@@ -13,7 +13,7 @@ from xlutils.copy import copy
 def get_excelData(sheetName, startRow, endRow):
     dataList = []
     # 1-excel表路径
-    excelDir = '../data/TP_接口自动化测试用例V1.1.xls'
+    excelDir = 'D:/Auto_test_python/TP_Api_Test/data/TP_接口自动化测试用例V1.1.xls'
     # 2- 打开excel对象--formatting_info=True  保持样式
     workBook = xlrd.open_workbook(excelDir, formatting_info=True)
     # workBook = openpyxl.load_workbook(excelDir)
@@ -76,12 +76,9 @@ def set_excelData():
     return workBookNew
     # 复制出来的excel对象，复制出来excel对象的第一个子表
 
-#
-# if __name__ == '__main__':
-#     a = get_excelData('1登录模块', 3, 4)
-#     # b=json.loads(a)
-#     print(a)
-#     print(type(a))
-    # print(get_excelData2('1登录模块','Login'))
-    # for one in get_excelData2('1登录模块','Login'):
-    #     print(one)
+
+if __name__ == '__main__':
+    a = get_excelData('1登录模块', 3, 3)
+    # b=json.loads(a)
+    print(a)
+    print(type(a))
